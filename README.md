@@ -43,7 +43,7 @@ PSGI / FastCGI 等で Movable Type のプロセスを常駐させている場合
 
 ## 配布物の生成
 
-ZipDeploy / ContentCSVManager と同じローカルビルド方式を使用します。
+ローカルビルド方式を使用します。
 
 Windows PowerShell ではリポジトリルートから次を実行します。
 
