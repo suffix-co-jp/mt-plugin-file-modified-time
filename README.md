@@ -41,6 +41,40 @@ PSGI / FastCGI 等で Movable Type のプロセスを常駐させている場合
 
 複数サーバーへ配置する場合は、全サーバーで同一バージョンを配置してください。
 
+## 配布物の生成
+
+ZipDeploy / ContentCSVManager と同じローカルビルド方式を使用します。
+
+Windows PowerShell ではリポジトリルートから次を実行します。
+
+```powershell
+.\scripts\build-release.ps1
+```
+
+Python を直接実行する場合は次のコマンドでも生成できます。
+
+```bash
+python scripts/build_release.py
+```
+
+`config.yaml` の `version` を読み取り、既存の `dist/` をいったん削除してから、現在のソースをもとに次の配布物を生成します。
+
+```text
+dist/
+├── FileModifiedTime/
+│   ├── config.yaml
+│   ├── README.md
+│   └── lib/
+│       └── FileModifiedTime/
+│           └── FileModifiedTime/
+│               └── Tags.pm
+└── FileModifiedTime-1.0.5.zip
+```
+
+ZIP 内のルートディレクトリは `FileModifiedTime/` です。ディレクトリ権限は `0755`、ファイル権限は `0644` に正規化し、各エントリの更新日時はビルド実行日時で統一します。生成後は展開ディレクトリと ZIP の内容、権限、更新日時をスクリプト内で検証します。
+
+`dist/` はローカル生成物のため Git 管理対象外です。最新版の配布物が必要な場合は、対象ブランチを `git pull` した後にビルドスクリプトを再実行してください。
+
 ## 基本仕様
 
 ### デフォルト
