@@ -1,0 +1,12 @@
+id: FileModifiedTime
+key: FileModifiedTime
+name: FileModifiedTime
+version: 1.0.5
+description: CSS・JavaScriptなど、サイト配下の実ファイルの最終更新日時（mtime）をMovable Typeの再構築時に取得します。標準では YYYYMMDDHHMMSS 形式で出力し、format="unix" で Unix timestamp に切り替えられます。ルート相対パスのほか、URL系MTタグや絶対URLが混在した指定も自動的に正規化します。
+author_name: Suffix, Inc.
+author_link: https://www.suffix.co.jp/
+doc_link: https://www.suffix.co.jp/documentation/
+
+tags:
+  function:
+    FileModifiedTime: $FileModifiedTime::FileModifiedTime::Tags::file_modified_time
