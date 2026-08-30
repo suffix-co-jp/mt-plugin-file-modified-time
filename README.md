@@ -108,7 +108,7 @@ PSGI / FastCGI 等で Movable Type のプロセスを常駐させている場合
 ## JavaScript 使用例
 
 ```html
-<script src="/common/js/main.min.js?v=<mt:FileModifiedTime file="/common/js/main.min.js"></script>
+<script src="/common/js/main.min.js?v=<mt:FileModifiedTime file="/common/js/main.min.js">"></script>
 ```
 
 再構築後:
@@ -219,13 +219,13 @@ HTTPアクセスは行いません。
 ルート相対:
 
 ```html
-<script src="/common/js/main.min.js?v=<mt:FileModifiedTime file="/common/js/main.min.js"></script>
+<script src="/common/js/main.min.js?v=<mt:FileModifiedTime file="/common/js/main.min.js">"></script>
 ```
 
 絶対URL:
 
 ```html
-<script src="<mt:SiteURL>common/js/main.min.js?v=<mt:FileModifiedTime file="/common/js/main.min.js"></script>
+<script src="<mt:SiteURL>common/js/main.min.js?v=<mt:FileModifiedTime file="/common/js/main.min.js">"></script>
 ```
 
 ## セキュリティ
